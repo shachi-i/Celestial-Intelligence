@@ -1,54 +1,58 @@
-🔭Pulsar Detection Using Machine Learning
+# Pulsar Classification Project
 
-🚀 Author: Shachipriya Pattanayak                                                                                                                                                                                
-📅 Date: March 2025
-📂 Project Type: Machine Learning for Astrophysics
-🏆 Goal: Classify pulsars using XGBoost & LSTM with advanced feature engineering
+### Overview
 
-🌌 Introduction
+This project focuses on classifying pulsar candidates from an imbalanced astronomical dataset using machine learning techniques. The dataset contains statistical features derived from pulsar signals and non-pulsar signals.
 
-Pulsars are rapidly rotating neutron stars that emit periodic radio signals. Detecting them is crucial for astrophysics, gravitational wave studies, and space navigation. Traditionally, astronomers manually analyze vast amounts of telescope data, but Machine Learning (ML) provides a faster, more efficient alternative.
+### Data Preprocessing and Visualization
 
-This project applies XGBoost and LSTM models to classify pulsars from the HTRU2 dataset, leveraging advanced feature engineering techniques such as:
+- Assigned meaningful column names to the dataset based on official dataset descriptions to improve clarity.
+- Addressed class imbalance using SMOTE (Synthetic Minority Over-sampling Technique) to generate synthetic samples for the minority class, thus mitigating bias during model training.
+- Extracted advanced features using Fourier Transform to capture frequency-domain characteristics and Wavelet Transform for time-frequency analysis on signal attributes like mean integrated profile and dispersion measure.
+- Engineered additional features such as the ratio of mean to standard deviation of dispersion measures (DM_Approx).
+- Visualized feature distributions before and after applying different scaling techniques including StandardScaler, MinMaxScaler, and RobustScaler to better understand feature behavior and support model training.
 
-✅ Fourier Transform (FFT) – Captures periodicity in frequency space.
-✅ Wavelet Transform (CWT) – Extracts time-frequency signal variations.
-✅ Dispersion Measure Approximation – Models signal spreading across frequencies.
 
-🔬 Why This Matters:
+### Models Implemented
 
-Automating pulsar detection helps astronomers process massive datasets efficiently.
-Techniques used here apply to particle detection and signal processing at CERN.
-📂 Dataset
-🔗 Dataset: HTRU2 Pulsar Dataset
-🔹 8 original features derived from pulse profile and DM-SNR curves.
-🔹 1 target variable: 1 = pulsar, 0 = non-pulsar.
-🔹 New engineered features: Fourier & wavelet transforms, dispersion measure.
+- Random Forest Classifier
+- XGBoost Classifier
+- Long Short-Term Memory (LSTM) Neural Network
 
-🛠️ Methodology
+Tree-based models were chosen due to their effectiveness with tabular data containing skewed statistical features, while LSTM was included for comparative purposes.
 
-1️⃣ Data Preprocessing & Feature Engineering
-✔ Cleaned and normalized dataset.
-✔ Applied Fourier & wavelet transforms.
-✔ Implemented dispersion measure approximation.
+### Model Evaluation
 
-2️⃣ Machine Learning Models
-🔹 XGBoost – Gradient boosting for structured data.
-🔹 LSTM – Captures sequential dependencies in pulsar signals.
+Performance metrics included Accuracy, Precision, Recall, F1-Score, and ROC-AUC score.
+Due to the inherent class imbalance, ROC-AUC and class-wise metrics were emphasized over simple accuracy.
 
-3️⃣ Model Evaluation & Explainability
-📊 Metrics: Accuracy, Precision, Recall, F1-score.
-📌 Explainability Tools:
-✔ SHAP (SHapley Additive Explanations) – Feature importance analysis.
+Performance Summary
+Model	Accuracy	ROC-AUC
+Random Forest	~0.98	~0.97
+XGBoost	~0.98	~0.98
 
-📈 Results
-Model	Accuracy	Precision	Recall	F1-Score
-XGBoost	98.5%	97.8%	99.2%	98.5%
-LSTM	97.9%	97.1%	98.8%	97.9%
-✅ XGBoost performed best with higher accuracy & fewer false negatives.
-✅ LSTM excelled in learning temporal patterns, but needs hyperparameter tuning.
+Both tree-based models showed excellent classification capability, while LSTM underperformed due to the dataset's non-sequential nature.
 
-📊 Feature Importance (SHAP Analysis)
+### Observations
 
-DM-SNR Skewness: Crucial for pulsar classification.
-Fourier Transform Features: Helped distinguish pulsars from noise.
+Tree-based models effectively captured nonlinear relationships and handled skewed data distributions.
+LSTM models did not add predictive value given the statistical, non-temporal dataset.
+Default decision thresholds were used without calibration or probability tuning.
+
+### Conclusion and Future Work
+
+This project highlights the applicability of classical machine learning methods to astronomical signal classification tasks. Future work may involve:
+
+- Threshold tuning and model calibration
+- Interpretability analysis with feature attribution methods
+- Exploring ensemble methods or hybrid models
+
+### Tools & Technologies
+
+- Python (Pandas, NumPy)
+- Scikit-learn
+- Imbalanced-learn (SMOTE)
+- PyWavelets
+- XGBoost
+- TensorFlow / Keras
+- Matplotlib / Seaborn
