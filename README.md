@@ -10,12 +10,12 @@ Pulsars are rapidly rotating neutron stars that emit beams of electromagnetic ra
 
 In this project, I built a complete ML pipeline that:
 
-Cleans and preprocesses astronomical signal data
-Handles severe class imbalance using SMOTE
-Applies robust feature scaling
-Trains and evaluates:
-XGBoost Classifier
-Deep Neural Network (MLP)
+Cleans and preprocesses astronomical signal data, 
+Handles severe class imbalance using SMOTE, 
+Applies robust feature scaling, 
+Trains and evaluates: 
+XGBoost Classifier, 
+Deep Neural Network (MLP), 
 Compares model performance using classification metrics and ROC-AUC
 
 
