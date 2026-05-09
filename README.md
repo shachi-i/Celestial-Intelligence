@@ -17,7 +17,7 @@ Trains and evaluates:
 XGBoost Classifier
 Deep Neural Network (MLP)
 Compares model performance using classification metrics and ROC-AUC
-Dataset
+
 
 Dataset Used: HTRU2 Pulsar Dataset
 
