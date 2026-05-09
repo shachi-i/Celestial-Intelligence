@@ -34,18 +34,18 @@ DM-SNR statistical features
 1 → Pulsar
 
 ## Tech Stack
-Machine Learning
-Python
-Scikit-learn
-XGBoost
-TensorFlow / Keras
-Data Processing
-Pandas
-NumPy
-SMOTE (Imbalanced-learn)
-Visualization
-Matplotlib
-Seaborn
+- Machine Learning
+- Python
+- Scikit-learn
+- XGBoost
+- TensorFlow / Keras
+- Data Processing
+- Pandas
+- NumPy
+- SMOTE (Imbalanced-learn)
+- Visualization
+- Matplotlib
+- Seaborn
 
 
 ## Model Performance
@@ -65,17 +65,18 @@ Pulsar F1-Score	87%
 The neural network achieved stronger minority-class detection performance while maintaining high overall accuracy.
 
 ## Key Learnings
-Handling class imbalance is critical for rare-event detection problems
-SMOTE significantly improved recall for pulsar detection
-RobustScaler helped stabilize training against extreme outliers
-Deep learning models can outperform traditional ML models on minority class recognition
-Proper evaluation metrics matter more than accuracy in imbalanced datasets
-Future Improvements
-Hyperparameter tuning with Optuna
-Ensemble stacking between XGBoost and Neural Networks
-Model deployment using FastAPI
-Real-time pulsar prediction dashboard
-Explainability using SHAP values
+- Handling class imbalance is critical for rare-event detection problems
+- SMOTE significantly improved recall for pulsar detection
+- RobustScaler helped stabilize training against extreme outliers
+- Deep learning models can outperform traditional ML models on minority class recognition
+- Proper evaluation metrics matter more than accuracy in imbalanced datasets
+  
+## Future Improvements
+- Hyperparameter tuning with Optuna
+- Ensemble stacking between XGBoost and Neural Networks
+- Model deployment using FastAPI
+- Real-time pulsar prediction dashboard
+- Explainability using SHAP values
 
 
 
